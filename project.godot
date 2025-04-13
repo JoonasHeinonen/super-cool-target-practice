@@ -14,3 +14,12 @@ config/name="Super Cool Target Practice"
 run/main_scene="res://scenes/Levels/Lobby.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
+
+[display]
+
+window/size/resizable=false
+window/stretch/scale=3.0
+
+[rendering]
+
+textures/canvas_textures/default_texture_filter=0
