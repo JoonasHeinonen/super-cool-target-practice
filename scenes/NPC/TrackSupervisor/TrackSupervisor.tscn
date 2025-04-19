@@ -1,11 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://db21v1awnos2l"]
+[gd_scene load_steps=4 format=3 uid="uid://db21v1awnos2l"]
 
+[ext_resource type="Script" path="res://src/npc/npc.gd" id="1_0ncrg"]
 [ext_resource type="Texture2D" uid="uid://drhl42u7h3cpk" path="res://resources/images/characters/track_supervisor.png" id="1_3sivs"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f61k8"]
 size = Vector2(20, 18.5)
 
 [node name="TrackSupervisor" type="CharacterBody2D"]
+script = ExtResource("1_0ncrg")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 1.5)
