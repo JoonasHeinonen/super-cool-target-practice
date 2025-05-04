@@ -1,7 +1,7 @@
 extends Area2D
 
 @export var exit : bool = false
-@export var scene_to_transit_to : PackedScene = null
+@export_file("*.tscn") var scene_to_transit_to : String
 
 var door_active : bool
 
@@ -16,7 +16,7 @@ func _process(delta):
 		if exit:
 			get_tree().quit()
 		else:
-			get_tree().change_scene_to_packed(scene_to_transit_to)
+			get_tree().change_scene_to_file(scene_to_transit_to)
 
 func _on_area_entered(area):
 	$DirectionUI.show()

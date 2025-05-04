@@ -1,10 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://mlai1jn5bh6u"]
+[gd_scene load_steps=5 format=3 uid="uid://mlai1jn5bh6u"]
 
 [ext_resource type="PackedScene" uid="uid://cov7db0jq0yxj" path="res://scenes/Player/Player.tscn" id="1_v6pu0"]
 [ext_resource type="PackedScene" uid="uid://db21v1awnos2l" path="res://scenes/NPC/TrackSupervisor/TrackSupervisor.tscn" id="2_xeeol"]
 [ext_resource type="PackedScene" uid="uid://bbobpggbhc50j" path="res://scenes/Tiles/Tiles.tscn" id="3_4iaic"]
 [ext_resource type="PackedScene" uid="uid://b5ghffcqwtenl" path="res://scenes/WorldEntities/Door.tscn" id="4_cioed"]
-[ext_resource type="PackedScene" uid="uid://cjvsfx6lbdbdt" path="res://scenes/Levels/TargetPracticeArea.tscn" id="5_mskuk"]
 
 [node name="Lobby" type="Node2D"]
 
@@ -13,13 +12,11 @@ layer_0/tile_data = PackedInt32Array(196608, 0, 4, 131072, 0, 4, 65536, 0, 4, 0,
 
 [node name="RangeDoor" parent="." instance=ExtResource("4_cioed")]
 position = Vector2(100, 180)
-scene_to_transit_to = ExtResource("5_mskuk")
+scene_to_transit_to = "res://scenes/Levels/TargetPracticeArea.tscn"
 
 [node name="ExitDoor" parent="." instance=ExtResource("4_cioed")]
 position = Vector2(340, 180)
 exit = true
-
-[node name="Doors" type="Node" parent="."]
 
 [node name="TrackSupervisor" parent="." instance=ExtResource("2_xeeol")]
 position = Vector2(141, 180)
