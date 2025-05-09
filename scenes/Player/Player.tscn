@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://cov7db0jq0yxj"]
+[gd_scene load_steps=5 format=3 uid="uid://cov7db0jq0yxj"]
 
 [ext_resource type="Script" path="res://src/player/player.gd" id="1_pcqib"]
 [ext_resource type="Texture2D" uid="uid://cw1ww68u201un" path="res://resources/images/characters/player.png" id="2_t3y3m"]
+[ext_resource type="Texture2D" uid="uid://d3lsfoet6cqlr" path="res://resources/images/weapons/pistol.png" id="3_okrrp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1dn16"]
 size = Vector2(12, 38)
@@ -21,3 +22,8 @@ texture = ExtResource("2_t3y3m")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerDetectionRadius"]
 position = Vector2(0, 1)
 shape = SubResource("RectangleShape2D_1dn16")
+
+[node name="WeaponSprite" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(1, -1)
+texture = ExtResource("3_okrrp")

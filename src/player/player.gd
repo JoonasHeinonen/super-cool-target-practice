@@ -1,5 +1,8 @@
 extends CharacterBody2D
 
+@onready var parent = get_parent()
+@onready var weapon = $WeaponSprite
+
 const SPEED = 100.0
 const JUMP_VELOCITY = -300.0
 
@@ -35,4 +38,16 @@ func _physics_process(delta):
 	if Input.is_action_just_released("ui_left") || Input.is_action_just_released("ui_right"):
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 
+	wield_weapon()
+	rotate_weapon()
 	move_and_slide()
+
+func rotate_weapon():
+	var mousePos = get_global_mouse_position()
+	weapon.look_at(mousePos)
+
+func wield_weapon():
+	if parent is Level and parent.is_weapon_allowed:
+		weapon.show()
+	else:
+		weapon.hide()

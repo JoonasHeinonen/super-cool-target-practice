@@ -20,7 +20,7 @@ shape = SubResource("RectangleShape2D_yosem")
 visible = false
 position = Vector2(0, -32)
 texture = ExtResource("3_iafyx")
-hframes = 3
+hframes = 5
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
 [connection signal="area_exited" from="." to="." method="_on_area_exited"]
