@@ -1,0 +1,39 @@
+[gd_scene load_steps=6 format=3 uid="uid://cdk34xw8o14ic"]
+
+[ext_resource type="Script" path="res://src/npc/target.gd" id="1_3nwwk"]
+[ext_resource type="Texture2D" uid="uid://cyochhsjngp27" path="res://resources/images/other/targets.png" id="2_pw4f7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_buuyf"]
+size = Vector2(5, 5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tuvmc"]
+size = Vector2(3, 9)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jwj3l"]
+size = Vector2(3, 9)
+
+[node name="Target" type="CharacterBody2D"]
+script = ExtResource("1_3nwwk")
+
+[node name="TargetSprite" type="Sprite2D" parent="."]
+texture = ExtResource("2_pw4f7")
+hframes = 6
+
+[node name="BullseyeArea" type="Area2D" parent="."]
+
+[node name="BullseyeCollisionShape" type="CollisionShape2D" parent="BullseyeArea"]
+position = Vector2(0.5, 0.5)
+shape = SubResource("RectangleShape2D_buuyf")
+
+[node name="WhiteregionArea" type="Area2D" parent="."]
+
+[node name="WhiteregionSouthCollisionShape" type="CollisionShape2D" parent="WhiteregionArea"]
+position = Vector2(0.5, 7.5)
+shape = SubResource("RectangleShape2D_tuvmc")
+
+[node name="WhiteregionNorthCollisionShape" type="CollisionShape2D" parent="WhiteregionArea"]
+position = Vector2(0.5, -6.5)
+shape = SubResource("RectangleShape2D_jwj3l")
+
+[connection signal="area_entered" from="BullseyeArea" to="." method="_on_bullseye_area_entered"]
+[connection signal="area_entered" from="WhiteregionArea" to="." method="_on_whiteregion_area_entered"]

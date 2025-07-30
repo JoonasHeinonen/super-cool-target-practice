@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://cjvsfx6lbdbdt"]
+[gd_scene load_steps=7 format=3 uid="uid://cjvsfx6lbdbdt"]
 
 [ext_resource type="PackedScene" uid="uid://bbobpggbhc50j" path="res://scenes/Tiles/Tiles.tscn" id="1_3pj46"]
 [ext_resource type="Script" path="res://src/levels/level_base.gd" id="1_l478m"]
 [ext_resource type="PackedScene" uid="uid://cov7db0jq0yxj" path="res://scenes/Player/Player.tscn" id="2_04u2b"]
 [ext_resource type="Texture2D" uid="uid://dp84ghxffx8u3" path="res://resources/images/tiles/gun_range_background_wide.png" id="2_d7x0l"]
 [ext_resource type="PackedScene" uid="uid://b5ghffcqwtenl" path="res://scenes/WorldEntities/Door.tscn" id="3_5vtns"]
+[ext_resource type="PackedScene" uid="uid://cdk34xw8o14ic" path="res://scenes/NPC/TrackTarget/Target.tscn" id="6_vhcot"]
 
 [node name="TargetPracticeArea" type="Node2D"]
 script = ExtResource("1_l478m")
@@ -23,3 +24,14 @@ scene_to_transit_to = "res://scenes/Levels/Lobby.tscn"
 
 [node name="Player" parent="." instance=ExtResource("2_04u2b")]
 position = Vector2(99, 180)
+
+[node name="Targets" type="Node" parent="."]
+
+[node name="Track2" parent="Targets" instance=ExtResource("6_vhcot")]
+position = Vector2(329, 79)
+
+[node name="Track3" parent="Targets" instance=ExtResource("6_vhcot")]
+position = Vector2(335, 136)
+
+[node name="Track" parent="Targets" instance=ExtResource("6_vhcot")]
+position = Vector2(228, 121)
