@@ -15,6 +15,8 @@ func _physics_process(delta):
 
 func _on_bullseye_area_entered(area):
 	print("10 points: BULLSEYE!!!!")
+	Globle.points += 10
 
 func _on_whiteregion_area_entered(area):
 	print("1 point... ")
+	Globle.points += 1

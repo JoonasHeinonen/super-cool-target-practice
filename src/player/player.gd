@@ -16,6 +16,8 @@ var ammo : int = 10
 var is_player_allowed_weapon : bool = false
 
 func _physics_process(delta):
+	$ScoreLabel.text = "Score: " + str(Globle.points)
+
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y += gravity * delta

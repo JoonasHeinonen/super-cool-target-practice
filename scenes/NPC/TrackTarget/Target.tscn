@@ -7,10 +7,10 @@
 size = Vector2(5, 5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tuvmc"]
-size = Vector2(3, 9)
+size = Vector2(3, 10)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jwj3l"]
-size = Vector2(3, 9)
+size = Vector2(3, 10)
 
 [node name="Target" type="CharacterBody2D"]
 script = ExtResource("1_3nwwk")
@@ -28,11 +28,11 @@ shape = SubResource("RectangleShape2D_buuyf")
 [node name="WhiteregionArea" type="Area2D" parent="."]
 
 [node name="WhiteregionSouthCollisionShape" type="CollisionShape2D" parent="WhiteregionArea"]
-position = Vector2(0.5, 7.5)
+position = Vector2(0.5, 9)
 shape = SubResource("RectangleShape2D_tuvmc")
 
 [node name="WhiteregionNorthCollisionShape" type="CollisionShape2D" parent="WhiteregionArea"]
-position = Vector2(0.5, -6.5)
+position = Vector2(0.5, -8)
 shape = SubResource("RectangleShape2D_jwj3l")
 
 [connection signal="area_entered" from="BullseyeArea" to="." method="_on_bullseye_area_entered"]
