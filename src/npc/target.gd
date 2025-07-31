@@ -17,4 +17,4 @@ func _on_bullseye_area_entered(area):
 	print("10 points: BULLSEYE!!!!")
 
 func _on_whiteregion_area_entered(area):
-	print("1 point...")
+	print("1 point... ")

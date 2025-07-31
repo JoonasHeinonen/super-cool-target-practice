@@ -11,14 +11,13 @@ func _ready():
 	var weapon = get_parent().get_node("Player").get_node("WeaponHolder")
 	if weapon:
 		velocity = Vector2(speed, 0).rotated(weapon.rotation)
-	print("Original velocity: ", velocity.angle())
 
 func _physics_process(delta):
 	velocity.y += bullet_gravity
 	position += velocity * delta
 	rotation = velocity.angle()
 
-func _on_projectile_body_entered(body): pass
-	#if body.is_in_group("mobs"):
-		#body.queue_free()
-	#queue_free()
+func _on_projectile_body_entered(body):
+	if body.is_in_group("mobs"):
+		body.queue_free()
+	queue_free()

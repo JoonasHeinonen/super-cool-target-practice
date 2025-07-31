@@ -11,7 +11,7 @@ func _ready():
 		player = get_node("Player")
 
 	if !Globle.last_used_door_location:
-		print("This is null")
+		printerr("No last door defined")
 	else:
 		player.position = Globle.last_used_door_location
 		

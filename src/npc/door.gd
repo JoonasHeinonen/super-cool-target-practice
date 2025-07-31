@@ -8,12 +8,6 @@ extends Area2D
 var door_active : bool
 
 func _ready():
-	print("Name: ", self.name, " Position: ", self.position)
-	if Globle.last_used_door:
-		print("Last used door location: ", Globle.last_used_door_location)
-	else:
-		print("No last used door set.")
-
 	if exit:
 		$DirectionUI.frame = 0
 	else:
