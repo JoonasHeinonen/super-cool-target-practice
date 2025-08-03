@@ -58,14 +58,15 @@ func wield_weapon():
 		rotate_weapon()
 
 		# Shooting logic.
-		if Input.is_action_just_pressed("mouse_shoot"):
+		if Input.is_action_just_pressed("mouse_shoot") and ammo > 0:
 			shoot()
 	else:
 		weapon.hide()
 
 # Shoot a projectile.
 func shoot():
-	# if ammo > 0:
+	if ammo <= 0:
+		return  # Do nothing if no ammo left.
 	var b = pistol_bullet.instantiate()
 	b.rotation = weapon.rotation
 	owner.add_child(b)
