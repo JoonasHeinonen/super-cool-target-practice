@@ -13,10 +13,11 @@ const JUMP_VELOCITY = -300.0
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 var ammo : int = 10
+var time : float = 60
 var is_player_allowed_weapon : bool = false
 
 func _physics_process(delta):
-	$ScoreLabel.text = "Score: " + str(Globle.points)
+	$PlayerUi/ScoreLabel.text = "Score: %d" % [Globle.points]
 
 	# Add the gravity.
 	if not is_on_floor():
@@ -47,6 +48,13 @@ func _physics_process(delta):
 	if Input.is_action_just_released("ui_left") || Input.is_action_just_released("ui_right"):
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 
+	# Time.
+	time -= delta
+	var seconds: float = fmod(time, 60)
+	$PlayerUi/TimeLabel.text = "Time: %d" % [seconds]
+
+	# end_time_det.get_time(minutes, seconds, milisec)
+
 	wield_weapon()
 	move_and_slide()
 
@@ -54,7 +62,7 @@ func _physics_process(delta):
 func wield_weapon():
 	if parent is Level and parent.is_weapon_allowed:
 		weapon.show()
-		$ShootLabel.text = "Ammo: " + str(ammo)
+		$PlayerUi/ShootLabel.text = "Ammo: %d" % [ammo]
 		rotate_weapon()
 
 		# Shooting logic.

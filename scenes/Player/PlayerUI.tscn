@@ -1,0 +1,35 @@
+[gd_scene load_steps=2 format=3 uid="uid://detcii6t4qpce"]
+
+[ext_resource type="Theme" uid="uid://6r4j7p3j31to" path="res://resources/themes/sctp_theme.tres" id="1_bqt6j"]
+
+[node name="PlayerUi" type="CanvasLayer"]
+
+[node name="ShootLabel" type="Label" parent="."]
+modulate = Color(0, 0, 0, 1)
+anchors_preset = -1
+anchor_right = 0.0207692
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 70.0
+offset_bottom = 27.0
+theme = ExtResource("1_bqt6j")
+text = "Welcome!"
+metadata/_edit_use_anchors_ = true
+
+[node name="ScoreLabel" type="Label" parent="."]
+modulate = Color(0, 0, 0, 1)
+offset_left = 137.0
+offset_top = 4.0
+offset_right = 270.0
+offset_bottom = 27.0
+theme = ExtResource("1_bqt6j")
+metadata/_edit_use_anchors_ = true
+
+[node name="TimeLabel" type="Label" parent="."]
+modulate = Color(0, 0, 0, 1)
+offset_left = 310.0
+offset_top = 4.0
+offset_right = 469.0
+offset_bottom = 27.0
+theme = ExtResource("1_bqt6j")
+metadata/_edit_use_anchors_ = true

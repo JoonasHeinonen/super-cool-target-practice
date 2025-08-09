@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://cw1ww68u201un" path="res://resources/images/characters/player.png" id="2_t3y3m"]
 [ext_resource type="PackedScene" uid="uid://12a817rppoym" path="res://scenes/Player/Projectiles/PistolBullet.tscn" id="2_uoeq8"]
 [ext_resource type="Texture2D" uid="uid://d3lsfoet6cqlr" path="res://resources/images/weapons/pistol.png" id="3_okrrp"]
-[ext_resource type="Theme" uid="uid://6r4j7p3j31to" path="res://resources/themes/sctp_theme.tres" id="4_p2ghc"]
+[ext_resource type="PackedScene" uid="uid://detcii6t4qpce" path="res://scenes/Player/PlayerUI.tscn" id="6_dc2o8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1dn16"]
 size = Vector2(12, 38)
@@ -35,20 +35,4 @@ texture = ExtResource("3_okrrp")
 [node name="Muzzle" type="Node2D" parent="WeaponHolder"]
 position = Vector2(30, -3)
 
-[node name="ShootLabel" type="Label" parent="."]
-modulate = Color(0, 0, 0, 1)
-offset_left = -66.0
-offset_top = -50.0
-offset_right = 67.0
-offset_bottom = -27.0
-theme = ExtResource("4_p2ghc")
-text = "Greetings!"
-
-[node name="ScoreLabel" type="Label" parent="."]
-modulate = Color(0, 0, 0, 1)
-offset_left = 69.0
-offset_top = -50.0
-offset_right = 202.0
-offset_bottom = -27.0
-theme = ExtResource("4_p2ghc")
-text = "Score: 0"
+[node name="PlayerUi" parent="." instance=ExtResource("6_dc2o8")]
