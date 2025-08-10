@@ -17,8 +17,6 @@ var time : float = 10
 var is_player_allowed_weapon : bool = false
 
 func _physics_process(delta):
-	$PlayerUi/ScoreLabel.text = "Score: %d" % [Globle.points]
-
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y += gravity * delta
@@ -51,15 +49,19 @@ func _physics_process(delta):
 	# Time.
 	time -= delta
 	var seconds: float = fmod(time, 60)
-	if seconds <= 0 or ammo <= 0:
-		seconds = 0
-		ammo = 0
-		$PlayerUi/ShootLabel.text = "You scored %d points." % [Globle.points]
-		$PlayerUi/TimeLabel.text = ""
-		$PlayerUi/ScoreLabel.text = ""
-	else:
-		$PlayerUi/ShootLabel.text = "Ammo: %d" % [ammo]
-		$PlayerUi/TimeLabel.text = "Time: %d" % [seconds]
+
+	# Level specific data logic.
+	if parent is Level and parent.is_weapon_allowed:
+		if seconds <= 0 or ammo <= 0:
+			seconds = 0
+			ammo = 0
+			$PlayerUi/ShootLabel.text = "You scored %d points." % [Globle.points]
+			$PlayerUi/TimeLabel.text = ""
+			$PlayerUi/ScoreLabel.text = ""
+		else:
+			$PlayerUi/ShootLabel.text = "Ammo: %d" % [ammo]
+			$PlayerUi/TimeLabel.text = "Time: %d" % [seconds]
+			$PlayerUi/ScoreLabel.text = "Score: %d" % [Globle.points]
 
 	wield_weapon()
 	move_and_slide()

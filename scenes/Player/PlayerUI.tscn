@@ -13,7 +13,7 @@ offset_top = 4.0
 offset_right = 70.0
 offset_bottom = 27.0
 theme = ExtResource("1_bqt6j")
-text = "Welcome!"
+text = "Welcome to Super Cool Target Practice!"
 metadata/_edit_use_anchors_ = true
 
 [node name="ScoreLabel" type="Label" parent="."]
