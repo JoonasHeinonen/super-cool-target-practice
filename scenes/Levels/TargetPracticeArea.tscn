@@ -28,10 +28,10 @@ position = Vector2(99, 180)
 [node name="Targets" type="Node" parent="."]
 
 [node name="Track2" parent="Targets" instance=ExtResource("6_vhcot")]
-position = Vector2(329, 79)
+position = Vector2(286, 57)
 
 [node name="Track3" parent="Targets" instance=ExtResource("6_vhcot")]
-position = Vector2(335, 136)
+position = Vector2(343, 121)
 
 [node name="Track" parent="Targets" instance=ExtResource("6_vhcot")]
 position = Vector2(228, 121)
