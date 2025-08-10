@@ -10,13 +10,12 @@ func _ready():
 	sprite_index = rng.randf_range(0, sprite.hframes)
 	sprite.frame = sprite_index
 
-func _physics_process(delta):
-	pass
-
 func _on_bullseye_area_entered(area):
 	print("10 points: BULLSEYE!!!!")
-	Globle.points += 10
+	if area.name == "Bullet":
+		Globle.points += 10
 
 func _on_whiteregion_area_entered(area):
 	print("1 point... ")
-	Globle.points += 1
+	if area.name == "Bullet":
+		Globle.points += 1
