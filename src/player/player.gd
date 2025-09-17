@@ -58,10 +58,12 @@ func _physics_process(delta):
 			$PlayerUi/ShootLabel.text = "You scored %d points." % [Globle.points]
 			$PlayerUi/TimeLabel.text = ""
 			$PlayerUi/ScoreLabel.text = ""
+			Globle.is_track_over = true
 		else:
 			$PlayerUi/ShootLabel.text = "Ammo: %d" % [ammo]
 			$PlayerUi/TimeLabel.text = "Time: %d" % [seconds]
 			$PlayerUi/ScoreLabel.text = "Score: %d" % [Globle.points]
+			Globle.is_track_over = false
 
 	wield_weapon()
 	move_and_slide()

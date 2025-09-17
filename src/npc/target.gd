@@ -12,8 +12,9 @@ func _ready():
 	sprite.frame = sprite_index
 
 func _physics_process(delta):
-	velocity.y = speed
-	move_and_slide()
+	if !Globle.is_track_over:
+		velocity.y = speed
+		move_and_slide()
 
 func _on_bullseye_area_entered(area):
 	if area.name == "Bullet":
